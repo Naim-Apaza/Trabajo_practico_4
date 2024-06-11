@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:fragment="head">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-th-text="${titulo}"></title>
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<script type="text/javascript"
+	th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</head>
 
 <body>
 	<header class="container shadow-sm">
@@ -18,14 +28,14 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Institución</a>
+							aria-current="page" data-th-href="@{/}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" data-th-href="@{/alumno/lista}">Alumnos</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Secretarias</a>
+						<li class="nav-item"><a class="nav-link" data-th-href="@{/docente/lista}">Docentes</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Servicios</a>
+						<li class="nav-item"><a class="nav-link" data-th-href="@{/materia/lista}">Materias</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Noticias</a>
+						<li class="nav-item"><a class="nav-link" data-th-href="@{/carrera/listado}">Carreras</a>
 						</li>
 					</ul>
 				</div>
@@ -35,106 +45,6 @@
 			<h5 class="text-secondary">Flammam Tvam Hoc Foco Accende lat.
 				"Enciende tu antorcha en este fuego"</h5>
 		</hgroup>
-		<div class="container py-3">
-			<div class="row">
-				<div class="col-12 col-xl-2 col-md-4 py-2">
-					<ul class="list-unstyled list-group">
-						<li
-							class="text-light p-1 text-center fs-5 bg-info list-group-item itemsh">
-							ALUMNOS</li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">AULAS VIRTUALES</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">INSTRUCCIONES SIU</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">Ver mas..</a></li>
-					</ul>
-				</div>
-				<div class="col-12 col-xl-2 col-md-4 py-2">
-					<ul class="list-unstyled list-group">
-						<li
-							class="text-light p-1 text-center list-group-item fs-5 bg-success">
-							EGRESADOS</li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">DEFENSA DE TESIS</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">TRAMITACION DE TITULO</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">Ver mas..</a></li>
-					</ul>
-				</div>
-				<div class="col-12 col-xl-2 col-md-4 py-2">
-					<ul class="list-unstyled list-group">
-						<li
-							class="text-light p-1 text-center list-group-item fs-5 bg-dark">
-							DOCENTES</li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">NOVEDADES</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">CONCURSO</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">Ver mas..</a></li>
-					</ul>
-				</div>
-				<div class="col-12 col-xl-2 col-md-4 py-2">
-					<ul class="list-unstyled list-group">
-						<li
-							class="text-light p-1 text-center list-group-item fs-5 bg-danger">
-							POSGRADO</li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">NOVEDADES</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">CARRERAS</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">Ver mas..</a></li>
-					</ul>
-				</div>
-				<div class="col-12 col-xl-2 col-md-4 py-2">
-					<ul class="list-unstyled list-group">
-						<li
-							class="text-light p-1 text-center list-group-item fs-5 bg-secondary">
-							INVESTIGACIÓN</li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">NOVEDADES</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">SECTER</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">Ver mas..</a></li>
-					</ul>
-				</div>
-				<div class="col-12 col-xl-2 col-md-4 py-2">
-					<ul class="list-unstyled list-group">
-						<li
-							class="text-light p-1 text-center list-group-item fs-5 bg-warning">
-							INGRESANTES</li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">INGRESO 2024</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">LU 2024</a></li>
-						<li class="listNav text-secondary list-group-item"><a
-							class="link-dark link-opacity-75-hover link-underline-opacity-0"
-							href="#">TFC 2do Cuatrimestre</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
 	</header>
 
 </body>

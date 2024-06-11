@@ -1,15 +1,107 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Facultad de ingenieria</title>
-<link th:rel="stylesheet"
-	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-<script type="text/javascript"
-	th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
-</head>
+<head data-th-replace="~{/layouts/header :: head}"></head>
 <body>
-	<header th:replace="/layouts/header :: header"></header>
+	<header th:replace="~{/layouts/header :: header}"></header>
+	<div class="container py-3">
+		<div class="row">
+			<div class="col-12 col-xl-2 col-md-4 py-2">
+				<ul class="list-unstyled list-group">
+					<li
+						class="text-light p-1 text-center fs-5 bg-info list-group-item itemsh">
+						ALUMNOS</li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">AULAS VIRTUALES</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">INSTRUCCIONES SIU</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">Ver mas..</a></li>
+				</ul>
+			</div>
+			<div class="col-12 col-xl-2 col-md-4 py-2">
+				<ul class="list-unstyled list-group">
+					<li
+						class="text-light p-1 text-center list-group-item fs-5 bg-success">
+						EGRESADOS</li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">DEFENSA DE TESIS</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">TRAMITACION DE TITULO</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">Ver mas..</a></li>
+				</ul>
+			</div>
+			<div class="col-12 col-xl-2 col-md-4 py-2">
+				<ul class="list-unstyled list-group">
+					<li class="text-light p-1 text-center list-group-item fs-5 bg-dark">
+						DOCENTES</li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">NOVEDADES</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">CONCURSO</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">Ver mas..</a></li>
+				</ul>
+			</div>
+			<div class="col-12 col-xl-2 col-md-4 py-2">
+				<ul class="list-unstyled list-group">
+					<li
+						class="text-light p-1 text-center list-group-item fs-5 bg-danger">
+						POSGRADO</li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">NOVEDADES</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						data-th-href="@{/carrera/listado}">CARRERAS</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">Ver mas..</a></li>
+				</ul>
+			</div>
+			<div class="col-12 col-xl-2 col-md-4 py-2">
+				<ul class="list-unstyled list-group">
+					<li
+						class="text-light p-1 text-center list-group-item fs-5 bg-secondary">
+						INVESTIGACIÓN</li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">NOVEDADES</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">SECTER</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">Ver mas..</a></li>
+				</ul>
+			</div>
+			<div class="col-12 col-xl-2 col-md-4 py-2">
+				<ul class="list-unstyled list-group">
+					<li
+						class="text-light p-1 text-center list-group-item fs-5 bg-warning">
+						INGRESANTES</li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">INGRESO 2024</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">LU 2024</a></li>
+					<li class="listNav text-secondary list-group-item"><a
+						class="link-dark link-opacity-75-hover link-underline-opacity-0"
+						href="#">TFC 2do Cuatrimestre</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
 	<main class="container shadow-sm py-5">
 		<div class="d-flex flex-column align-items-center">
@@ -65,19 +157,17 @@
 				<button class="carousel-control-prev" type="button"
 					data-bs-target="#carouselId" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon bg-dark rounded-5"
-						aria-hidden="true"></span> <span
-						class="visually-hidden">Previous</span>
+						aria-hidden="true"></span> <span class="visually-hidden">Previous</span>
 				</button>
 				<button class="carousel-control-next" type="button"
 					data-bs-target="#carouselId" data-bs-slide="next">
 					<span class="carousel-control-next-icon bg-black rounded-5"
-						aria-hidden="true"></span> <span
-						class="visually-hidden">Next</span>
+						aria-hidden="true"></span> <span class="visually-hidden">Next</span>
 				</button>
 			</div>
 		</div>
 	</main>
 
-	<footer th:replace="/layouts/footer :: footer"></footer>
+	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
 </body>
 </html>
