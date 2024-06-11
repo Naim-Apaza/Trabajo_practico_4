@@ -1,14 +1,14 @@
 package ar.edu.unju.fi.model;
 
-import java.time.LocalTime;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Materia {
-	private String codigo;
+	private long codigo;
 	private String nombre;
 	private String curso;
-	private LocalTime cantidadHoras;
+	private String cantidadHoras;
 	private boolean modalidad;
 	@Autowired
 	private Docente docente;
@@ -18,8 +18,8 @@ public class Materia {
 	public Materia() {
 	}
 
-	public Materia(String codigo, String nombre, String curso, LocalTime cantidadHoras, boolean modalidad,
-			Docente docente, Carrera carrera) {
+	public Materia(long codigo, String nombre, String curso, String cantidadHoras, boolean modalidad, Docente docente,
+			Carrera carrera) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.curso = curso;
@@ -29,11 +29,11 @@ public class Materia {
 		this.carrera = carrera;
 	}
 
-	public String getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
 
@@ -53,11 +53,11 @@ public class Materia {
 		this.curso = curso;
 	}
 
-	public LocalTime getCantidadHoras() {
+	public String getCantidadHoras() {
 		return cantidadHoras;
 	}
 
-	public void setCantidadHoras(LocalTime cantidadHoras) {
+	public void setCantidadHoras(String cantidadHoras) {
 		this.cantidadHoras = cantidadHoras;
 	}
 
@@ -83,6 +83,12 @@ public class Materia {
 
 	public void setCarrera(Carrera carrera) {
 		this.carrera = carrera;
+	}
+
+	@Override
+	public String toString() {
+		return "Materia [codigo=" + codigo + ", nombre=" + nombre + ", curso=" + curso + ", cantidadHoras="
+				+ cantidadHoras + ", modalidad=" + modalidad + ", docente=" + docente + ", carrera=" + carrera + "]";
 	}
 
 }
